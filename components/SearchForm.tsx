@@ -1,10 +1,8 @@
 import Form from 'next/form'
 import ResetButton from './ResetButton';
 
-const SearchForm = () => {
-  const query = "test";
+const SearchForm = ({query}: { query? : string}) => {
 
-  
 
   return (
     <Form action="/" scroll={false} className='search-form'>

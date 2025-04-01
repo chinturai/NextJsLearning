@@ -1,5 +1,6 @@
 'use client'
 
+import { X } from "lucide-react";
 import Link from "next/link";
 
 const ResetButton = () => {
@@ -12,7 +13,7 @@ const ResetButton = () => {
     return (
         <button type="reset" onClick={reset}>
             <Link href='/' className="search-btn text-white">
-                X
+                <X className="size-6"/>
             </Link>
         </button>
     )
