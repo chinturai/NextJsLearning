@@ -1,33 +1,16 @@
 import { title } from "process";
 import SearchForm from "../../components/SearchForm";
-import StartupCard from "@/components/StartupCard";
+import StartupCard , {StartupTypeCard} from "@/components/StartupCard";
+import { STARTUP_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
 export default async function Home({ searchParams, }: { searchParams: Promise<{ query?: string }>; }) {
 
   const query = (await searchParams).query;
 
-  const posts = [
-    {
-      _createdAt: new Date(),
-      _id: 1,
-      views: 55,
-      author: { _id: 1 , name: 'Chintu Rai'},
-      description: "Perro is an Special Dating Platform for Pet-Lovers !",
-      image:"https://plus.unsplash.com/premium_photo-1681882376151-01c22985026a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Dating",
-      title:"Perro",
-    },
-    {
-      _createdAt: new Date(),
-      _id: 2,
-      views: 19,
-      author: { _id: 2 , name: 'Team ByteForge'},
-      description: "Transparency between Hospitals and Patients",
-      image:"https://media.istockphoto.com/id/1418999473/photo/doctors-comforting-disabled-elderly-patient.webp?a=1&b=1&s=612x612&w=0&k=20&c=YwTJIt9-LX4Acp_3ng6BD3_pke2MHOqNMqMgR2adg_g=",
-      category: "HealthCare",
-      title:"Arogya",
-    }
-  ]
+  const params = { search : query || null };
+
+  const { data : posts } = await sanityFetch({query: STARTUP_QUERY , params});
 
   return (
     <>
@@ -64,6 +47,8 @@ export default async function Home({ searchParams, }: { searchParams: Promise<{ 
           )}
         </ul>
       </section>
+
+      <SanityLive/>
     </>
   );
 }

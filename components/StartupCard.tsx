@@ -3,10 +3,14 @@ import { Eye } from "lucide-react"
 import Image from "next/image";
 import Link from "next/link"
 import { Button } from "./ui/button";
+import { Author, Startup } from "@/sanity/types";
+
+export type StartupTypeCard = Omit<Startup, "author"> & { author? : Author};
 
 const StartupCard = ({ post }: { post: StartupTypeCard }) => {
 
-    const { _createdAt, _id, views, author: { _id: authorId, name }, title, description, category, image } = post;
+    const { _createdAt, _id, views, author, title, description, category, image } = post;
+
     return (
         <li className="startup-card group">
 
@@ -23,8 +27,8 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
 
             <div className="flex-between mt-5 gap-5">
                 <div className="flex-1">
-                    <Link href={`/user/${authorId}`} >
-                        <p className="text-16-medium line-clamp-1"> {name} </p>
+                    <Link href={`/user/${author?._id}`} >
+                        <p className="text-16-medium line-clamp-1"> {author?.name} </p>
                     </Link>
 
                     <Link href={`/startup/${_id}`} >
@@ -32,7 +36,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
                     </Link>
                 </div>
 
-                <Link href={`/user/${authorId}`} >
+                <Link href={`/user/${author?._id}`} >
                     <Image src="https://placehold.co/48x48" alt="placeholder" height={48} width={48} className="rounded-full" />
                 </Link>
 
@@ -45,7 +49,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
             </Link>
 
             <div className="flex-between gap-3 mt-5">
-                <Link href={`/?query=${category.toLowerCase()}`} >
+                <Link href={`/?query=${category?.toLowerCase()}`} >
                     <p className="text-16-medium">{category}</p>
                 </Link>
 
