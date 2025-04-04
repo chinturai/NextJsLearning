@@ -1,5 +1,7 @@
 import { defineQuery } from "next-sanity";
 
+// Queries related to Startup Model
+
 export const STARTUP_QUERY = defineQuery(`
     *[_type == "startup" && defined(slug.current) && !defined($search) || category match $search || title match $search || author->name match $search ] | order(_createdAt){
         _id,
@@ -39,4 +41,17 @@ export const STARTUP_VIEWS_QUERY = defineQuery(`
         _id,
         views
     }
+`)
+
+// Queries related to Author Model
+export const AUTHOR_BY_GITHUB_ID = defineQuery(`
+    *[_type == "author" && id == $id][0]{
+        _id,
+        id,
+        name,
+        username,
+        email,
+        image,
+        bio
+    }    
 `)
