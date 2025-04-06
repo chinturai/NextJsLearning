@@ -1,36 +1,56 @@
-# HUSTLE HIVE - Pitch your startups to potential Investor - Submit your ideas, Vote on pitches, and take part in virtual competitions !
-       
-## <a name="tech-stack">⚙️ Tech Stack</a>
+---
 
-- React 19
-- Next.js 15
-- Sanity
-- TailwindCSS
-- ShadCN
-- TypeScript
+# 🚀 HUSTLE HIVE  
+**Pitch your startup. Get discovered. Join the Hive.**  
+Submit your ideas, vote on others, and compete in virtual pitch battles!
 
-## <a name="features">🔋 Features</a>
+---
 
-👉 **Live Content API**: Displays the latest startup ideas dynamically on the homepage using Sanity's Content API.
+## ⚙️ Tech Stack
 
-👉 **GitHub Authentication**: Allows users to log in easily using their GitHub account.
+- **Frontend:** Next.js 15 + React 19  
+- **Backend:** Sanity CMS + GROQ  
+- **Styling:** TailwindCSS + ShadCN  
+- **Language:** TypeScript
 
-👉 **Pitch Submission**: Users can submit startup ideas, including title, description, category, and multimedia links (
-image or video).
+---
 
-👉 **View Pitches**: Browse through submitted ideas with filtering options by category.
+## 🔋 Key Features
 
-👉 **Pitch Details Page**: Click on any pitch to view its details, with multimedia and description displayed.
+- **📡 Live Content API**  
+  Dynamically displays the latest startup ideas using Sanity's real-time Content API.
 
-👉 **Profile Page**: Users can view the list of pitches they've submitted.
+- **🔐 GitHub Auth**  
+  One-click login via GitHub for seamless access.
 
-👉 **Editor Picks**: Admins can highlight top startup ideas using the "Editor Picks" feature managed via Sanity Studio.
+- **📝 Pitch Submission**  
+  Users can submit detailed startup pitches with title, description, category, and media (images/videos).
 
-👉 **Views Counter**: Tracks the number of views for each pitch instead of an upvote system.
+- **🔍 Discover & Filter**  
+  Browse and filter pitches by category to explore ideas that interest you.
 
-👉 **Search**: Search functionality to load and view pitches efficiently.
+- **📄 Detailed Pitch View**  
+  View full pitch details, including media, with a clean, engaging layout.
 
-👉 **Minimalistic Design**: Fresh and simple UI with only the essential pages for ease of use and a clean aesthetic.
+- **🙋‍♂️ Personal Profiles**  
+  Each user has a profile page showcasing all their submitted pitches.
 
-and many more, including the latest **React 19**, **Next.js 15** and **Sanity** features alongside code architecture and
-reusability
+- **🌟 Editor Picks**  
+  Highlight top ideas through a curated selection managed via Sanity Studio.
+
+- **👁️ Views Counter**  
+  See how many people have viewed each pitch — no upvotes, just pure interest.
+
+- **🔎 Smart Search**  
+  Quickly find ideas with an efficient, responsive search feature.
+
+- **✨ Clean & Minimal UI**  
+  Simple, intuitive interface focusing on what matters — the ideas.
+
+---
+
+## 🌐 Built with the Latest Tech
+
+Harnessing the power of **React 19**, **Next.js 15**, and **Sanity**, Hustle Hive is designed with scalability, performance, and developer experience in mind. Clean code architecture, reusable components, and modern best practices throughout.
+
+---
