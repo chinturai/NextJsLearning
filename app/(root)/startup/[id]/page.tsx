@@ -46,8 +46,8 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                             href={`/user/${post.author?._id}`}
                             className="flex gap-2 items-center mb-3"
                         >
-                            <img
-                                src={post.author.img}
+                            <Image
+                                src={post.author.image}
                                 alt="avatar"
                                 width={64}
                                 height={64}
@@ -55,12 +55,12 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                             />
 
                             <div>
-                                <p className="text-20-medium"> {post.author.name} </p>
-                                <p className="text-16-medium !text-black-300"> @{post.author.username} </p>
+                                <p className="text-20-medium"> {post.author?.name} </p>
+                                <p className="text-16-medium !text-black-300"> @{post.author?.username} </p>
                             </div>
                         </Link>
 
-                        <p className="category-tag"> {post.category} </p>
+                        <p className="category-tag"> {post?.category} </p>
 
                     </div>
 
@@ -87,8 +87,8 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
                 {/* TO-DO : Recommended Startups based on your current browsing */}
 
-                <Suspense fallback={ <Skeleton className="view_skeleton" /> }>
-                    <View id={id}/>
+                <Suspense fallback={<Skeleton className="view_skeleton" />}>
+                    <View id={id} />
                 </Suspense>
             </section>
         </>

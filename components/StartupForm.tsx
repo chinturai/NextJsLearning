@@ -8,6 +8,7 @@ import { Button } from "./ui/button";
 import { formSchema } from "@/lib/validation";
 import { z } from 'zod';
 import { useRouter } from "next/navigation";
+import { createPitch } from "@/lib/actions";
 
 
 const StartupForm = () => {
@@ -30,9 +31,14 @@ const StartupForm = () => {
 
       await formSchema.parseAsync(formValues);
 
-      // const result = await createIdea(prevState , formData , pitch);
+      const result = await createPitch(prevState , formData , pitch);
 
-      // router.push(`/startup/${result.id}`);
+      if (result.status == "SUCCESS") {
+        router.push(`/startup/${result._id}`);
+      }
+
+      return result;
+
     } catch (error) {
       if(error instanceof z.ZodError){
         const fieldErrors = error.flatten().fieldErrors;
