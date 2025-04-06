@@ -1,5 +1,3 @@
----
-
 # 🚀 HUSTLE HIVE  
 **Pitch your startup. Get discovered. Join the Hive.**  
 Submit your ideas, vote on others, and compete in virtual pitch battles!
